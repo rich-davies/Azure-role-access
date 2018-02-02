@@ -5,7 +5,7 @@ $SelectedUsers = @()
 #Clear and prepare SelectedUsers array 
 $SelectedGroups = @() 
  
-Login-AzureRmAccount
+#Login-AzureRmAccount
 #Get Azure Module Version 
 $AzureModuleVersion = (Get-Module -Name "AzureRM" -ListAvailable).Version 
 Write-Verbose "Azure Version: $($AzureModuleVersion.Major)" 
@@ -16,7 +16,7 @@ switch ($AzureModuleVersion.Major) {
         break} 
     {$_ -lt 4} { 
         $SubIdVar = "SubscriptionId" 
-        $SubNameVar = "SubscriptionName" 
+        $SubNameVar = "Name" 
         break} 
 } 
  
